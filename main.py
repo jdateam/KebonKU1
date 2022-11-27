@@ -95,8 +95,85 @@ while True:
     
 
 #penyiraman otomatis
+    #keadaan baris 1
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_1 = True
+    else:
+        keadaansoil_1 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_1 = True
+    else:
+        keadaansuhu_1 = False
+
+    #keadaan baris 2
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_2 = True
+    else:
+        keadaansoil_2 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_2 = True
+    else:
+        keadaansuhu_2 = False
+    
+    #keadaan baris 3
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_3 = True
+    else:
+        keadaansoil_3 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_3 = True
+    else:
+        keadaansuhu_3 = False
+
+    #keadaan baris 4
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_4 = True
+    else:
+        keadaansoil_4 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_4 = True
+    else:
+        keadaansuhu_4 = False
+
+    #keadaan baris 5
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_5 = True
+    else:
+        keadaansoil_5 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_5 = True
+    else:
+        keadaansuhu_5 = False
+
+    #keadaan baris 6
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_6 = True
+    else:
+        keadaansoil_6 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_6 = True
+    else:
+        keadaansuhu_6 = False
+
+    #keadaan baris 7
+    if float(data_sensor_soil[0]) <= 50:
+        keadaansoil_7 = True
+    else:
+        keadaansoil_7 = False
+
+    if float(data_sensor_suhu[0]) >= 30:
+        keadaansuhu_7 = True
+    else:
+        keadaansuhu_7 = False
+
     #baris 1
-    if  True:#float(data_sensor_soil[0]) <= 50 & float(data_sensor_suhu[0]) >= 30:
+    if  keadaansoil_1 == True & keadaansuhu_1 == True:
         pinSelenoid_1.write(hidup)
         data_sensor_solenoid_1 = True
         print("hidup")
@@ -105,7 +182,7 @@ while True:
         data_sensor_solenoid_1 = False
     
     #baris 2
-    if True:#float(data_sensor_soil[1]) <= 50 & float(data_sensor_suhu[1]) >= 30:
+    if keadaansoil_2 == True & keadaansuhu_2 == True:
         pinSelenoid_2.write(hidup)
         data_sensor_solenoid_2 = True
         print("hidup")
@@ -114,7 +191,7 @@ while True:
         data_sensor_solenoid_2 = False
     
     #baris 3
-    if True:#float(data_sensor_soil[2]) <= 50 & float(data_sensor_suhu[2]) >= 30:
+    if keadaansoil_3 == True & keadaansuhu_3 == True:
         pinSelenoid_3.write(hidup)
         data_sensor_solenoid_3 = True
         print("hidup")
@@ -123,7 +200,7 @@ while True:
         data_sensor_solenoid_3 = False
     
     #baris 4
-    if True:#float(data_sensor_soil[3]) <= 50 & float(data_sensor_suhu[3]) >= 30:
+    if keadaansoil_4 == True & keadaansuhu_4 == True:
         pinSelenoid_4.write(hidup)
         data_sensor_solenoid_4 = True
         print("hidup")
@@ -132,7 +209,7 @@ while True:
         data_sensor_solenoid_4 = False
     
     #baris 5
-    if True:#float(data_sensor_soil[4]) <= 50 & float(data_sensor_suhu[4]) >= 30:
+    if keadaansoil_5 == True & keadaansuhu_5 == True:
         pinSelenoid_5.write(hidup)
         data_sensor_solenoid_5 = True
         print("hidup")
@@ -141,7 +218,7 @@ while True:
         data_sensor_solenoid_5 = False
     
     #baris 6
-    if True:#float(data_sensor_soil[5]) <= 50 & float(data_sensor_suhu[5]) >= 30:
+    if keadaansoil_6 == True & keadaansuhu_6 == True:
         pinSelenoid_6.write(hidup)
         data_sensor_solenoid_6 = True
         print("hidup")
@@ -150,24 +227,13 @@ while True:
         data_sensor_solenoid_6 = False
     
     #baris 7
-    if True:#float(data_sensor_soil[6]) <= 50 & float(data_sensor_suhu[6]) >= 30:
+    if keadaansoil_7 == True & keadaansuhu_7 == True:
         pinSelenoid_7.write(hidup)
         data_sensor_solenoid_7 = True
         print("hidup")
     else:
         pinSelenoid_7.write(mati)
         data_sensor_solenoid_7 = False
-
-    #baris 8
-    if True:#float(data_sensor_soil[7]) <= 50 & float(data_sensor_suhu[7]) >= 30:
-        pinSelenoid_8.write(hidup)
-        data_sensor_solenoid_8 = True
-        print("hidup")
-    else:
-        pinSelenoid_8.write(mati)
-        data_sensor_solenoid_8 = False
-    
-    
     
     #upload data
     uploadDataSolenoid( 
@@ -177,10 +243,8 @@ while True:
         data_sensor_solenoid_4,
         data_sensor_solenoid_5,
         data_sensor_solenoid_6,
-        data_sensor_solenoid_7,
-        data_sensor_solenoid_8,
+        data_sensor_solenoid_7
     )
-
 
 
 
